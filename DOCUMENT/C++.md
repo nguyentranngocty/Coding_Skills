@@ -1,7 +1,7 @@
 # C++
 ## Một số thư viện thường dùng
-- Thư viện tổng import 1 lần là được `#include <bits/stdc++.h>`
-- Các thư viện khác
+- Thư viện tổng import 1 lần là được thường dùng trong lập trình thi đấu : `#include <bits/stdc++.h>`
+- Các thư viện khác :
 ```cpp 
 #include <iostream>
 #include <algorithm>
