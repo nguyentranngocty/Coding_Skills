@@ -543,19 +543,19 @@ void toLower(string &s){
 
 //Đối vs các số lớn có nhiều chữ số (>= 10^6 chữ số) lưu vào string
 void solve(string s){
-     cin >> s;
-     int sum = 0;
-     for(char x : s){
-	 sum += (int) x; // sai vì nó sẽ cộng mã ASCII của x vào sum chứ ko phải số cần tính
-	 sum += x - '0'; //Lấy mã ASCII của char x trừ đi mã ASCII 0 sẽ ra số tách ra từ xâu
-	 }
-     cout << sum;
+    cin >> s;
+    int sum = 0;
+    for(char x : s){
+	    sum += (int) x; // sai vì nó sẽ cộng mã ASCII của x vào sum chứ ko phải số cần tính
+	    sum += x - '0'; //Lấy mã ASCII của char x trừ đi mã ASCII 0 sẽ ra số tách ra từ xâu
+	}
+    cout << sum;
 }
 
 //Chuẩn hóa ngày tháng năm sinh theo form dd/mm/yyyy => ứng dụng để viết comparator so sánh tuổi theo thứ tự từ điển
 void chuanHoa(string &s){
-     if(s[2] != '/') s = "0" + s;
-     if(s[5] != '/') s.insert(3, "0");
+    if(s[2] != '/') s = "0" + s;
+    if(s[5] != '/') s.insert(3, "0");
 }
 
     //Đếm kí tự xuất hiện trong xâu bằng map<char, int>
