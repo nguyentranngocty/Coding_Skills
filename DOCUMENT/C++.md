@@ -47,7 +47,6 @@ in.close();
 out.close();
 ```
 ## Con trỏ
-
 - Con trỏ b quản lý biến a :
     - `int a = 6;`
     - `int *b = &a;` 
@@ -78,14 +77,14 @@ delete a;
 delete[] a;
 ```
 ## Hàm
-- Nạp chồng hàm -> tên hàm có thế giống nhau nhưng kiểu trả về khác nhau 
+- Nạp chồng hàm : tên hàm có thế giống nhau nhưng kiểu trả về khác nhau 
 ```cpp
 void Tinh_tong(){
 }
 long long Ting_tong(){
 }
 ```
-- Truyền giá trị mặc định tham số vào hàm -> truyền vào phần tử cuối bên phải nếu chỉ truyền 1 tham số || truyền hết cho n tham số
+- Truyền giá trị mặc định tham số vào hàm : truyền vào phần tử cuối bên phải nếu chỉ truyền 1 tham số || truyền hết cho n tham số
 ```cpp
 int check(int a, int b /*Tham số hình thức*/){
     return a;
@@ -498,7 +497,7 @@ int main(){
 }
 ```
 ## String
-- Khai báo : string tên_biến `string s = ”Noi dung”` : trong dấu ngoặc kép lưu 1 chuỗi kí tự
+- Khai báo : string tên_biến `string s = ”Noi dung”` (trong dấu ngoặc kép lưu 1 chuỗi kí tự)
 - Nhập :
     - `cin >> s` : xâu không có dấu cách `s = "Python";`
     - `getline(cin, s, <có thể thêm>)` : xâu có dấu cách
