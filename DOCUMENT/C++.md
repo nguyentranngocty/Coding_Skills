@@ -424,7 +424,7 @@ int main(){
 ### multiset
 - Khai báo : multiset<kiểu_dữ_liệu> tên_biến `multiset<long long> se;`
 - Các hàm khác giống set trừ hàm find :
-    `se.find(x)` : trả về iterator của phần tử đầu tiên nếu các phần tử trùng nhau
+    - `se.find(x)` : trả về iterator của phần tử đầu tiên nếu các phần tử trùng nhau
 ### unordered_set
 - Khai báo : unordered_set<kiểu_dữ_liệu> tên_biến `unordered_set<string> se;` 
 - Các hàm giống set **TUY NHIÊN các hàm find(), count(), erase() ⇒ độ phức tạp có thể  O(1) đến O(n)**
