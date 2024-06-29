@@ -273,7 +273,7 @@ int main(){
 }
 ```
 # STL
-## iterator
+## Iterator
 - Các hàm :
     - `v.begin()` : phần tử đầu
     - `v.rbegin()` : phần tử cuối
@@ -291,7 +291,7 @@ vi.begin() + x = a[x];
 [x; y) = (begin() + x, begin() + y);
 [x; y] = (begin() + x, begin() + y + 1);
 ```
-## pair
+## Pair
 - Khai báo : pair<kiểu_dữ_liệu, kiểu_dữ_liệu>; 
     - `pair<int, int> pi;`   
     - `pair<pair<bool, char>, string> pi2;` 
@@ -303,7 +303,7 @@ for(int i = 0; i < n; i++){
     cout << a[i].first << a[i].second;
 }
 ```
-## vector
+## Vector
 - Khai báo và nhập : 
 ```cpp
 vector<int> vi; 
@@ -410,7 +410,7 @@ int main(){
     }
 }
 ```
-## set
+## Set
 ### set
 - Khai báo : set<kiểu_dữ_liêu> tên_biến  `set<int> se`
 - Các hàm :
@@ -428,7 +428,7 @@ int main(){
 ### unordered_set
 - Khai báo : unordered_set<kiểu_dữ_liệu> tên_biến `unordered_set<string> se;` 
 - Các hàm giống set **TUY NHIÊN các hàm find(), count(), erase() ⇒ độ phức tạp có thể  O(1) đến O(n)**
-## map
+## Map
 ### map
 - Khai báo : map<kiểu dữ liệu, kiểu dữ liệu> tên_biến `map<int, int> mp;`
 - Truy xuất phần tử : mp[key]  `mp[5];`
@@ -497,7 +497,7 @@ int main(){
     }
 }
 ```
-## string
+## String
 - Khai báo : string tên_biến `string s = ”Noi dung”` : trong dấu ngoặc kép lưu 1 chuỗi kí tự
 - Nhập :
     - `cin >> s` : xâu không có dấu cách `s = "Python";`
