@@ -705,69 +705,6 @@ void SinhVien::setName(string newName){
     name = newName;
 }
 
-//Class số phức
-class soPhuc{ //x = a +bi
-private:
-    int a, b;
-public:
-    //Constructor mặc định
-    soPhuc(){
-    }
-
-    //overload operator
-    //Cách 1 ko dùng hàm friend
-    soPhuc operator + (soPhuc other){
-        soPhuc tong;
-        tong.a = this->a + other.a;
-        tong.b = this->b + other.b;
-        return tong;
-    }
-    
-    bool operator < (soPhuc other){
-        return sqrt(this->a * this->a + this->b * this->b) > sqrt(other.a * other.a + other.b * other.b);
-    }
-
-    //Cách 2 dùng hàm friend
-    friend soPhuc operator - (soPhuc x, soPhuc y){
-        soPhuc hieu;
-        hieu.a = x.a - y.a;
-        hieu.b = x.b - y.b;
-        return hieu;
-    }
-
-    //insertion
-    friend istream& operator >> (istream& in, soPhuc &x){
-        in >> x.a >> x.b;
-        return in;
-    }
-
-    //extraction
-    friend ostream& operator << (ostream& out, soPhuc x){
-        out << x.a << " " << "+" << " " << x.b << "i";
-        return out;
-    }
-
-    //Khi nạp chồng toán tử so sánh rồi => sort() ko cần viết cmp mà nó sẽ tự sort theo toán tử nạp chồng
-    friend bool operator == (soPhuc x, soPhuc y){
-        return x.a == y.a && x.b == y.b;
-    }
-
-    friend bool operator > (soPhuc x, soPhuc y){
-        return sqrt(x.a * x.a + x.b * x.b) > sqrt(y.a * y.a + y.b * y.b); 
-    }
-    
-    //Friend function
-    friend void input(soPhuc &p);
-    friend void output(soPhuc p);
-};
-
-void input(soPhuc &p){
-    cin >> p.a >> p.b;
-}
-void output(soPhuc p){
-    cout << p.a << " " << "+" << " " << p.b << "i";
-}
-
 int main(){
     student x{"Nguyen Van A", "Linh Xuan", 9.6};
     cout << x.getName() << ' ' << x.getGpa() << ' ' << x.getAdress() << endl;
@@ -819,7 +756,7 @@ void person::output(){
 }
 
 //Subclass => ko thể truy cập trực tiếp vào các thuộc tính private của lớp cha
-class student : public person{ //kế thừa các pt từ lớp person
+class student : public person{ 
 //thêm các đặc điểm riêng của lớp con
 private:
     double gpa;
@@ -843,9 +780,10 @@ public:
     }
     //các phương thức public lớp con vẫn gọi đc từ lớp cha 
     //có thể in thông tin của sv như tên hay địa chỉ kế thừa của lớp cha qua hàm get nhưng ko thể in qua trực tiếp hàm sau đây
-    // void output(){ //error
-    //  cout << ten << ' ' << address << ' ' << fixed << setprecision(2) << gpa;
-    // }
+    //error
+    void output(){ 
+     cout << ten << ' ' << address << ' ' << fixed << setprecision(2) << gpa;
+    }
 
     //fuction overiding => cùng tên, cùng kiểu trả về, cùng ds tham số
     void output(){
@@ -855,7 +793,7 @@ public:
     }
 };
 
-//Polymorphism + multilevel inheritance
+//Polymorphism + inheritance
 class shape{
 protected:
     int length, width;
@@ -876,7 +814,8 @@ public:
 class rectangle : public shape{
 public:
     int getArea(){
-        return length * width; // ko cần get set vì mode protected
+        // ko cần get set vì mode protected
+        return length * width; 
     }
 };
 
@@ -970,7 +909,8 @@ public:
 
     //Overriding
     void run(){
-        vehicle::run(); // call a function in base class and improve or define again
+        // call a function in base class and improve or define again
+        vehicle::run(); 
         cout << "It's a taxi !" << endl;
     }
     //Getter Setter
@@ -1066,17 +1006,18 @@ public:
 };
 
 //Abstract class => cannot initalize (cannot create object) but can use as pointer to manage subclass + up casting down casting + must have subclass 
-//pure virtual function => must be defined again in sub class to initalize and use (at least 1 pure virtual => Abstract class)
+//pure virtual function => must be defined again in sub class to initalize and use
 //usually don't create Constructor using virtual
 class person{
 protected:
     string name;
 public:
     //Abstract Class => at least 1 pure virtual 
+    //Interface => all functions in class are pure virtual
     virtual string getName() = 0;
     virtual void setName(string name) = 0;
     virtual void greeting() = 0;
-    //Interface => all functions in class are pure virtual
+    
 };
 
 struct gpa{
@@ -1130,15 +1071,17 @@ int main(){
     Vehicle->run();
     ((car*)Vehicle)->run();
     //Down casting fixed runtime errors
-    vehicle* v = Car; // up casting to Car by assigning => vehicle* v = (vehicle*)Car;
-    v->run(); //((car*)v)->run(); => down casting 
+    // up casting to Car by assigning => vehicle* v = (vehicle*)Car;
+    vehicle* v = Car; 
+    //((car*)v)->run(); => down casting 
+    v->run(); 
     //Manage a list of sub class inheriated base class
     vehicle* list[2];
     list[0] = new car();
     list[1] = new truck();
     for(int i = 0; i < 2; i++) list[i]->run();
-
-    person* p = new person(); // cannot initalize (dont use general object in real life => must be specific object)
+    // cannot initalize (dont use general object in real life => must be specific object)
+    person* p = new person(); 
     student* s = new student();
     s->greeting();
 }
@@ -1155,7 +1098,6 @@ class vehicle;
 class taxi;
 ...
 */
-
 class person{
 protected:
     string name;
@@ -1176,8 +1118,8 @@ public:
 class vehicle{
 protected:
     string modelName;
-    //pass by pointer
-    person* owner; // => don't need to have first value
+    //pass by pointer => don't need to have first value
+    person* owner; 
 public:
     //constructor
     vehicle(string name) : modelName(name){
@@ -1190,7 +1132,7 @@ public:
         //have to assign the property to have the value
         modelName = other.getModelName();
         //some data types cannot be copied such as pointer => can create a new pointer with the same memory allocation
-        //onwer = other.getOwner();
+        onwer = other.getOwner();
         //deep copy => change the default copy constructor with datatype pointer using operator new
         owner = new person(other.getOwner()->getFullName());
     }
@@ -1247,8 +1189,8 @@ protected:
     int otherManufactureYear;
     float otherFrameSize[3];
     //reference => person have vehicle (without reference => vehicle have person -> wrong relation)
-    //pass by reference
-    otherPerson &otherOwner; // => need to have first value => use initialization list
+    //pass by reference => need to have first value => use initialization list
+    otherPerson &otherOwner;  
 public:
     //initialization list => Constructor
     otherVehicle(string name, int year, otherPerson& p) 
@@ -1323,7 +1265,7 @@ protected:
 public:
     //const reference of pointer parameter
     taxi2(const string& s) : vehicle2(s){/* e.init()...; e.set()...; / Engine = new engine */}
-    //~taxi2(){delete Engine} => free up the memory for program
+    ~taxi2(){delete Engine} => free up the memory for program
     //Getter Setter
     string getName2(){
         return vName;
@@ -1367,9 +1309,10 @@ protected:
 public:
     //pass by value => assign parameters to variables or copy attributes between struct or class
     //system will automatically copy value passed in main function and assign to parameters in constructor => takes a lot of time
-    //truck(string s, registerInfo info) : truckName(s), license(info.license), ownerName(info.ownerName){}
+    truck(string s, registerInfo info) : truckName(s), license(info.license), ownerName(info.ownerName){}
     //pass by reference of pointer => inficient time because it will copy the name of memory allocation of value passed before => use for class or struct
-    //truck(string& s, registerInfo& info) : truckName(s), license(info.license), ownerName(info.ownerName){} //string also a class
+    //string also a class
+    truck(string& s, registerInfo& info) : truckName(s), license(info.license), ownerName(info.ownerName){} 
     //in copy constructor we want to copy the data without changing it => use const keyword
     truck(const string& s, const registerInfo& info) : truckName(s), license(info.license), ownerName(info.ownerName){}
     void setTruckOwner(driver* d){
