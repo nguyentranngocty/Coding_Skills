@@ -33,6 +33,7 @@ int main(){
 }
 ```
 ## File
+- Cài đặt :
 ```cpp
 fstream f;
 ifstream in;
@@ -77,14 +78,7 @@ delete a;
 delete[] a;
 ```
 ## Hàm
-- Nạp chồng hàm : tên hàm có thế giống nhau nhưng kiểu trả về khác nhau 
-```cpp
-void Tinh_tong(){
-}
-long long Ting_tong(){
-}
-```
-- Truyền giá trị mặc định tham số vào hàm : truyền vào phần tử cuối bên phải nếu chỉ truyền 1 tham số || truyền hết cho n tham số
+- Viết hàm và gọi hàm :
 ```cpp
 int check(int a, int b /*Tham số hình thức*/){
     return a;
@@ -95,6 +89,35 @@ int main(){
     check(x, y); // lời gọi hàm 
 }
 ```
+- Nạp chồng hàm : tên hàm có thế giống nhau nhưng kiểu trả về khác nhau 
+```cpp
+void Tinh_tong(){
+}
+long long Ting_tong(){
+}
+```
+- Truyền giá trị mặc định tham số vào hàm : truyền vào phần tử cuối bên phải nếu chỉ truyền 1 tham số || truyền hết cho n tham số
+    - `void f(int a = 5, long long b = 7, float c = 7.6);`
+    - `void f(int a, int b, char c = 'c');`
+- Viết hàm có tham số là con trỏ hoặc mảng :
+```cpp
+// con trỏ
+void f(int *a){
+    code
+}
+int main(){
+    f(&a);
+}
+
+// mảng
+void f(int a[], int n){
+    code
+}
+int main(){
+    f(a, 10);
+}
+```
+
 ## Typedef và define
 - typedef <kiểu dữ liệu> <tên>;
 - #define <tên> <kiểu dữ liệu/cấu trúc/câu lệnh> (nhiều ứng dụng hơn)
