@@ -15,15 +15,15 @@
 ## Inheritance
 
 - **ĐỀ BÀI**
-![Screen Shot 2024-04-22 at 07.51.18.png](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Screen_Shot_2024-04-22_at_07.51.18.png)
+![Screen Shot 2024-04-22 at 07.51.18.png](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Screen_Shot_2024-04-22_at_07.51.18.png)
     - **Trước khi kế thừa:**
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%205.png)
+    ![Untitled 5](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%205.png)
     - **Sau khi kế thừa:**
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%206.png)
+    ![Untitled 6](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%206.png)
 
 - **Quan hệ đặc biệt hóa - tổng quát hóa**
     -**Hai lớp đối tượng có quan hệ đặc biệt này khi:** lớp của đối tượng này là trường hợp đặc biệt của lớp đối tượng kia và lớp của đối tượng kia là trường hợp tổng quát của lớp đối tượng này.
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%207.png)
+    ![Untitled 7](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%207.png)
     - Kế thừa là một đặc điểm của ngôn ngữ dùng để **biểu diễn mối quan hệ đặc biệt hóa - tổng quát hóa giữa các lớp.**
     - Tính kế thừa cho phép **xây dựng một lớp mới dựa trên các định nghĩa của lớp đã có**, nghĩa là lớp cha có thể chia sẻ dữ liệu và phương thức cho các lớp con ⇒ Các lớp con khỏi phải định nghĩa lại, ngoài ra có thể bổ sung thêm các thành phần mới *( tái sử dụng mã nguồn 1 cách tối ưu, tận dụng được mã nguồn ).*
         - Lớp mới gọi là **lớp con (subclass)** hay **lớp dẫn xuất (derived class).**
@@ -53,9 +53,9 @@
 
 - **Mức độ truy cập thành viên của class (Phạm vi truy xuất)**
 
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%208.png)
+    ![Untitled 8](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%208.png)
 
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%203.png)
+    ![Untitled 9](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%209.png)
 
     - **public**: Nếu kế thừa ở dạng này, sau khi kế thừa, tất cả các thành viên dạng `public` lớp cha sẽ `public` ở lớp con, dạng `protected` ở lớp cha vẫn sẽ là `protected` ở lớp con.
     - **protected**: Nếu dùng `protected` thì sau khi kế thừa, tất cả các thành viên dạng `public` lớp cha sẽ trở thành `protected` tại lớp con.
@@ -200,9 +200,9 @@ class DerivedClass : **public SuperClass1**, **protected SuperClass2** {
     - **Khi lớp có phương thức ảo thuần túy**, **lớp trở thành lớp cơ sở trừu tượng (abstract - tính trừu tượng)**. Ta **không thể tạo đối tượng thuộc lớp này**.
     - Ta có thể định nghĩa phương thức ảo thuần túy, nhưng chỉ có các đối tượng con có thể gọi nó. Khi một lớp con kế thừa từ lớp cơ sở chứa một phương thức ảo thuần túy, **lớp con phải cung cấp cài đặt cho phương thức đó**. Nếu không, **lớp con sẽ trở thành một lớp trừu tượng và không thể khởi tạo đối tượng từ lớp đó.**
 
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%209.png)
+    ![Untitled 9](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%209.png)
 
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%2010.png)
+    ![Untitled 10](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%2010.png)
 
     - Ví dụ như Shape là lớp cơ sở, Rectangle, Triangle, … là lớp dẫn xuất, khai báo Shape là phương thức ảo thuần túy đảm bảo không thể tạo đối tượng thuộc lớp Shape.
 
