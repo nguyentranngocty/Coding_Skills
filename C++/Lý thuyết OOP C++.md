@@ -14,131 +14,131 @@
 - Cài đặt :
     
     ```cpp
-    //Một struct căn bản
-    struct student{
-    	string name, birth_day;
-    	int student_id, gender;
-    	
-    	//CONSTRUCTOR MẶC ĐỊNH
-    	student(){ //1
-    	}
-    	
-    	//CONSTRUCTOR (có thể truyền tham số hoặc ko)-> tên của struct và ko có kiểu trả về (những thuộc tính nhiều đối tượng có thì tạo hàm khởi tạo mặc định)
-    	student(int g){
-		name = "James"; //2
-		student_id = 1;
-		birth_day = "0192";
-		gender = g;
-    	}
-    	
-    	student(string ten, string ns, int id, int gt){ //3
-    		name = ten;
-    		student_id = id;
-    		birth_day = ns;
-    		gender = gt;
-    	}
-    
-    	void input(){ //Hàm trong struct thì chỉ dùng con trỏ this hoặc ko
-    		getline(cin, name);
-    		cin >> student_id; cin.ignore();
-    		getline(cin, birth_day);
-    		cin >> gender;
-    	}
-    
-    	void output(){
-    		cout << name << " " << student_id << " " << birth_day << " " << gender;
-    	}
-    	//DESTRUCTOR MẶC ĐỊNH
-    	~student(){
-    	}
-    };
-    
-    void nhap(student &a){ //Hàm bên ngoài thì bắt buộc phải a.thuộc tính hoặc a -> thuộc tính
-    	getline(cin, a.name);
-    	cin >> a.student_id; cin.ignore();
-    	getline(cin, a.birth_day);
-    	cin >> a.gender;
-    }
-    
-    void xuat(student a){
-    	cout << a.name << " " << a.student_id << " " << a.birth_day << " " << a.gender;
-    }
-    
-    //Nạp chồng toán tử -> qua vd về struct số phức
-    struct soPhuc{ //x = a +bi
-    	int a, b;
-    	
-    	//2 cách nạp chồng toán tử
-    	soPhuc operator + (const soPhuc other){
-    		soPhuc tong;
-    		tong.a = a + other.a;
-    		tong.b = b + other.b;
-    		return tong;
-    	}
-    	friend soPhuc operator - (const soPhuc x, const soPhuc y){
-    		soPhuc hieu;
-    		hieu.a = x.a - y.a;
-    		hieu.b = x.b - y.b;
-    		return hieu;
-    	}
-    
-    	//insertion -> luồng cin
-    	friend istream& operator >> (istream& in, soPhuc &x){
-    		in >> x.a >> x.b;
-    		return in;
-    	}
-    
-    	//extraction -> luồng cout
-    	friend ostream& operator << (ostream& out, soPhuc x){
-    		out << x.a << " " << "+" << " " << x.b << "i";
-    		return out;
-    	}
-    	
-    	//boolean
-    	friend bool operator == (soPhuc x, soPhuc y){
-    		return x.a == y.a && x.b == y.b;
-    	}
-    
-    	friend bool operator > (soPhuc x, soPhuc y){
-    		return sqrt(x.a * x.a + x.b * x.b) > sqrt(y.a * y.a + y.b * y.b); 
-    	}
-    };
-    
-    void input(soPhuc &p){
-    	cin >> p.a >> p.b;
-    }
-    
-    void output(soPhuc p){
-    	cout << p.a << " " << "+" << " " << p.b << "i";
-    }
-    
-    int main(){
-    	//Class 1	
-    	student a{"Anna S.",  "01-01-2001", 123456789, 2}; //3
-    	a.output(); cout << endl;
-    	student b; //1 
-    	nhap(b); //b.input();
-    	xuat(b); 
-    	student c(1); //2
-    	xuat(c);
-    	
-    	//Class 2
-    	soPhuc x, y, z;
-    	//Cách nhập và xuất 1
-    	input(x); 
-    	output(x); 
-    	cout << endl;
-    	//Cách nhập và xuất 2 -> nạp chồng toán tử cin và cout vào struct
-    	cin >> y; 
-    	cout << y; 
-    	cout << endl;
-    	//Tính toán thẳng qua toán tử mà ko cần viết hàm tính riêng
-    	z = x + y;
-    	cout << z;
-    	//So sánh cũng qua toán tử
-    	if(x > y) cout << "True";
-    	else cout << "False";
-    }
+	//Một struct căn bản
+	struct student{
+	    string name, birth_day;
+	    int student_id, gender;
+	    
+	    //CONSTRUCTOR MẶC ĐỊNH
+	    student(){ //1
+	    }
+	    
+	    //CONSTRUCTOR (có thể truyền tham số hoặc ko)-> tên của struct và ko có kiểu trả về (những thuộc tính nhiều đối tượng có thì tạo hàm khởi tạo mặc định)
+	    student(int g){
+	        name = "James"; //2
+	        student_id = 1;
+	        birth_day = "0192";
+	        gender = g;
+	    }
+	    
+	    student(string ten, string ns, int id, int gt){ //3
+	        name = ten;
+	        student_id = id;
+	        birth_day = ns;
+	        gender = gt;
+	    }
+	    
+	    void input(){ //Hàm trong struct thì chỉ dùng con trỏ this hoặc ko
+	        getline(cin, name);
+	        cin >> student_id; cin.ignore();
+	        getline(cin, birth_day);
+	        cin >> gender;
+	    }
+	    
+	    void output(){
+	        cout << name << " " << student_id << " " << birth_day << " " << gender;
+	    }
+	    //DESTRUCTOR MẶC ĐỊNH
+	    ~student(){
+	    }
+	};
+	    
+	void nhap(student &a){ //Hàm bên ngoài thì bắt buộc phải a.thuộc tính hoặc a -> thuộc tính
+	    getline(cin, a.name);
+	    cin >> a.student_id; cin.ignore();
+	    getline(cin, a.birth_day);
+	    cin >> a.gender;
+	}
+	
+	void xuat(student a){
+	    cout << a.name << " " << a.student_id << " " << a.birth_day << " " << a.gender;
+	}
+	
+	//Nạp chồng toán tử -> qua vd về struct số phức
+	struct soPhuc{ //x = a +bi
+	    int a, b;
+	    
+	    //2 cách nạp chồng toán tử
+	    soPhuc operator + (const soPhuc other){
+	        soPhuc tong;
+	        tong.a = a + other.a;
+	        tong.b = b + other.b;
+	        return tong;
+	    }
+	    friend soPhuc operator - (const soPhuc x, const soPhuc y){
+	        soPhuc hieu;
+	        hieu.a = x.a - y.a;
+	        hieu.b = x.b - y.b;
+	        return hieu;
+	    }
+	    
+	    //insertion -> luồng cin
+	    friend istream& operator >> (istream& in, soPhuc &x){
+	        in >> x.a >> x.b;
+	        return in;
+	    }
+	    
+	    //extraction -> luồng cout
+	    friend ostream& operator << (ostream& out, soPhuc x){
+	        out << x.a << " " << "+" << " " << x.b << "i";
+	        return out;
+	    }
+	    
+	    //boolean
+	    friend bool operator == (soPhuc x, soPhuc y){
+	        return x.a == y.a && x.b == y.b;
+	    }
+	    
+	    friend bool operator > (soPhuc x, soPhuc y){
+	        return sqrt(x.a * x.a + x.b * x.b) > sqrt(y.a * y.a + y.b * y.b); 
+	    }
+	};
+	
+	void input(soPhuc &p){
+	    cin >> p.a >> p.b;
+	}
+	
+	void output(soPhuc p){
+	    cout << p.a << " " << "+" << " " << p.b << "i";
+	}
+	
+	int main(){
+	    //Class 1   
+	    student a{"Anna S.",  "01-01-2001", 123456789, 2}; //3
+	    a.output(); cout << endl;
+	    student b; //1 
+	    nhap(b); //b.input();
+	    xuat(b); 
+	    student c(1); //2
+	    xuat(c);
+	    
+	    //Class 2
+	    soPhuc x, y, z;
+	    //Cách nhập và xuất 1
+	    input(x); 
+	    output(x); 
+	    cout << endl;
+	    //Cách nhập và xuất 2 -> nạp chồng toán tử cin và cout vào struct
+	    cin >> y; 
+	    cout << y; 
+	    cout << endl;
+	    //Tính toán thẳng qua toán tử mà ko cần viết hàm tính riêng
+	    z = x + y;
+	    cout << z;
+	    //So sánh cũng qua toán tử
+	    if(x > y) cout << "True";
+	    else cout << "False";
+	}
     ```
     
 
@@ -283,7 +283,7 @@ PhanSo c();
 
     - **Có quyền truy cập vào các thành phần private** của các đối tượng (tham chiếu đối tượng hay con trỏ đối tượng) có cùng class.
 
-    <img scr=https://imgur.com/a/TIsuBpt>
+    ![Untitled 0](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled.png)
 
     ( Trong ví dụ trên thì method **KiemTraTrung** nằm trong class **Point** )
 
