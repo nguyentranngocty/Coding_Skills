@@ -25,10 +25,10 @@
     	
     	//CONSTRUCTOR (có thể truyền tham số hoặc ko)-> tên của struct và ko có kiểu trả về (những thuộc tính nhiều đối tượng có thì tạo hàm khởi tạo mặc định)
     	student(int g){
-    		name = "James"; //2
-    		student_id = 1;
-    		birth_day = "0192";
-    		gender = g;
+		name = "James"; //2
+		student_id = 1;
+		birth_day = "0192";
+		gender = g;
     	}
     	
     	student(string ten, string ns, int id, int gt){ //3
@@ -283,7 +283,7 @@ PhanSo c();
 
     - **Có quyền truy cập vào các thành phần private** của các đối tượng (tham chiếu đối tượng hay con trỏ đối tượng) có cùng class.
 
-    ![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled.png)
+    ![Untitled 0](https://imgur.com/a/TIsuBpt)
 
     ( Trong ví dụ trên thì method **KiemTraTrung** nằm trong class **Point** )
 
