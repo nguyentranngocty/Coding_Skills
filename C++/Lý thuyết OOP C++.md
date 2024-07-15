@@ -1079,24 +1079,24 @@ int main() {
 ```cpp
 class Circle {
 private:
-		float r;
+	float r;
 public:
-		Circle(float r): r(r) {};
-		
-		void changeR(float newValue) {
-				if (newValue > 0) r = newValue;
-		}
-		
-		float getR() {
-				return r;
-		}
+	Circle(float r): r(r) {};
+	
+	void changeR(float newValue) {
+			if (newValue > 0) r = newValue;
+	}
+	
+	float getR() {
+			return r;
+	}
 };
 
 int main() {
-    Shape* shape = new Circle(2);
-    cout << shape->r;   // Error because its private.
-    changeR(3);
-    cout << shape->getR();
+	Shape* shape = new Circle(2);
+	cout << shape->r;   // Error because its private.
+	changeR(3);
+	cout << shape->getR();
 }
 ```
 
