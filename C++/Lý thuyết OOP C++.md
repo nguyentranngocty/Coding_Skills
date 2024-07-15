@@ -283,7 +283,7 @@ PhanSo c();
 
     - **Có quyền truy cập vào các thành phần private** của các đối tượng (tham chiếu đối tượng hay con trỏ đối tượng) có cùng class.
 
-    ![Untitled 0](https://imgur.com/a/TIsuBpt)
+    <img scr=https://imgur.com/a/TIsuBpt>
 
     ( Trong ví dụ trên thì method **KiemTraTrung** nằm trong class **Point** )
 
