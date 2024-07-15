@@ -1,6 +1,6 @@
 # OOP
 
-## STRUCT
+## Struct
 
 - Khai báo struct : struct tên { thuộc tính; hàm; hàm khởi tạo, nạp chồng toán tử};
 
