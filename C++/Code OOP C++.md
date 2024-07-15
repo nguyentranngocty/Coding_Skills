@@ -1,4 +1,4 @@
-# Hướng đối tượng (OOP)
+# Source code OOP
 ## Struct
 - Cài đặt : 
 ```cpp
