@@ -1,4 +1,4 @@
-# TÍNH CHẤT CỦA OOP
+# Tính chất của OOP
 
 ## Abstraction
 
