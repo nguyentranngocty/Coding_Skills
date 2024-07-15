@@ -499,9 +499,9 @@ int main() {
 - Toán tử chỉ mục **[…]** là toán tử đôi.
 - Các từ khóa **new** và **delete** cũng được coi là toán tử và có thể định nghĩa lại.
 
-![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%201.png)
+![Untitled 1](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%201.png)
 
-![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%202.png)
+![Untitled 2](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%202.png)
 
 - **Syntax**: **operator@** cho toán tử ‘**@**’
 
@@ -877,7 +877,7 @@ int main()
     - Chỉ có hàm thành phần và ngoại lệ là các hàm bạn được phép truy xuất.
     - Các lớp con cũng không có quyền truy cập.
 
-![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%203.png)
+![Untitled 3](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%203.png)
 
 **Scope Resolution Operator**
 
@@ -908,7 +908,7 @@ int main() {
 
 ### Từ khóa Const
 
-![Untitled](OOP%200025e91fb3df40b2b2fea74d1202ec5e/Untitled%204.png)
+![Untitled ](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%204.png)
 
 - Nếu khai báo function const thì không được thay đổi thuộc tính của class
 
