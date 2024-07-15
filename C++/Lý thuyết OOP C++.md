@@ -1079,24 +1079,24 @@ int main() {
 ```cpp
 class Circle {
 private:
-	float r;
+    float r;
 public:
-	Circle(float r): r(r) {};
-	
-	void changeR(float newValue) {
-			if (newValue > 0) r = newValue;
-	}
-	
-	float getR() {
-			return r;
-	}
+    Circle(float r): r(r) {};
+    
+    void changeR(float newValue) {
+        if (newValue > 0) r = newValue;
+    }
+    
+    float getR() {
+        return r;
+    }
 };
 
 int main() {
-	Shape* shape = new Circle(2);
-	cout << shape->r;   // Error because its private.
-	changeR(3);
-	cout << shape->getR();
+    Shape* shape = new Circle(2);
+    cout << shape->r;   // Error because its private.
+    changeR(3);
+    cout << shape->getR();
 }
 ```
 
@@ -1190,10 +1190,10 @@ public:
 };
 
 class Circle : public Shape {
-		float r;
+    float r;
 public:
-		Circle(float r): r(r) {};
-		
+    Circle(float r): r(r) {};
+    
     float tinhCv() override {
         return 2 * 3.14 * r;
     }
@@ -1221,27 +1221,27 @@ int main() {
 ```cpp
 class Value {
 private:
-		int privateValue = 1;
+    int privateValue = 1;
 protected:
-		int protectedValue = 2;
+    int protectedValue = 2;
 public:
-		int publicValue = 3;
+    int publicValue = 3;
 };
 
 class Derived : public Value {
 public:
-		void xuat() {
-				cout << this->privateValue; // Error
-				cout << this->protectedValue;  // 2
-				cout << this->publicValue;  // 3
-		}
+    void xuat() {
+        cout << this->privateValue; // Error
+        cout << this->protectedValue;  // 2
+        cout << this->publicValue;  // 3
+    }
 };
 
 int main() {
-		Value value;
-		cout << value.privateValue;   // Error
-		cout << value.protectedValue;   // Error
-		cout << value.publicValue;   // 3
+    Value value;
+    cout << value.privateValue;   // Error
+    cout << value.protectedValue;   // Error
+    cout << value.publicValue;   // 3
 }
 ```
 
@@ -1259,11 +1259,11 @@ int main() {
 ```cpp
 class Value {
 private:
-		int privateValue = 1;
+    int privateValue = 1;
 protected:
-		int protectedValue = 2;
+    int protectedValue = 2;
 public:
-		int publicValue = 3;
+    int publicValue = 3;
 };
 
 class Value1: public Value {};
@@ -1312,35 +1312,35 @@ class Value3: private Value {};
 // Lớp trừu tượng
 class Abstract {
 public:
-		virtual float tinhCv() = 0;   // Hàm thuần ảo
+    virtual float tinhCv() = 0;   // Hàm thuần ảo
 };
 
 class Circle : public Abstract {
 private:
-		float r = 2;
+    float r = 2;
 public:
-		float tinhCv() override {
-				return 2 * 3.14 * r;
-		}
+    float tinhCv() override {
+        return 2 * 3.14 * r;
+    }
 }
 
 class Human {
 private:
-		string name = "Vinh";
-		int age = 18;
+    string name = "Vinh";
+    int age = 18;
 public:
-		virtual void xuatThongTin() {  // Hàm ảo
-				cout << name << age;
-		}
+    virtual void xuatThongTin() {  // Hàm ảo
+        cout << name << age;
+    }
 }
 
 class SinhVien : public Human {
 private:
-		string MSSV = "23521793";
+    string MSSV = "23521793";
 public:
-		void xuatThongTin() override {
-				cout << name << MSSV << age;
-		}
+    void xuatThongTin() override {
+        cout << name << MSSV << age;
+    }
 }
 ```
 
@@ -1368,34 +1368,34 @@ public:
 ```cpp
 class Box {
 private:
-		int width = 10;
+    int width = 10;
 public:
-		friend void printWidth(Box &box);
-		friend class MoreInfo;
+    friend void printWidth(Box &box);
+    friend class MoreInfo;
 }
 
 // Hàm bạn
 void printWidth(Box &box) {
-		cout << box.width << endl;
+    cout << box.width << endl;
 }
 
 // Lớp bạn
 class MoreInfo {
 private:
-		int height = 5;
+    int height = 5;
 public:
-		void printInfo(Box &box) {
-				cout << height << ' ' << box.width << endl;
-		}
+    void printInfo(Box &box) {
+        cout << height << ' ' << box.width << endl;
+    }
 }
 
 int main() {
-		Box box;
-		MoreInfo info;
-		
-		printWidth(box);   // 10
-		info.printInfo(box);   // 5 10
-	
+    Box box;
+    MoreInfo info;
+
+    printWidth(box);   // 10
+    info.printInfo(box);   // 5 10
+    
 }
 ```
 
@@ -1425,20 +1425,20 @@ int main() {
 ```cpp
 class PhanSo {
 private:
-		int tu;
-		int mau;
+    int tu;
+    int mau;
 public:
-		// Constructor mặc định
-		PhanSo() {};
-		
-		// Constructor có đối số
-		PhanSo(int a. int b): tu(a), mau(b) {};
-		
-		// Constructor sao chép
-		PhanSo(const PhanSo& phanSo) {
-				tu = phanSo.tu;
-				mau = phanSo.mau;
-		}
+        // Constructor mặc định
+    PhanSo() {};
+    
+        // Constructor có đối số
+    PhanSo(int a. int b): tu(a), mau(b) {};
+    
+        // Constructor sao chép
+    PhanSo(const PhanSo& phanSo) {
+        tu = phanSo.tu;
+        mau = phanSo.mau;
+    }
 }
 ```
 
@@ -1478,30 +1478,30 @@ public:
             
     
     ```cpp
-    // Destructor mặc định
-    class PhanSo() {
-    		int a = 10;
-    public: 
-    		~PhanSo() {};
-    }
-    
-    // Destructor tự định nghĩa
-    class PhanSo {
-    		int *a = new int(10);
-    public:
-    		~PhanSo() {
-    				delete a;
-    				cout << "Destructor called" << endl;
-    		}
-    }
-    
-    // Destructor ảo
-    class PhanSo {
-    public:
-    		virtual ~PhanSo() {
-    				cout << "Destructor called" << endl;
-    		}
-    }
+	// Destructor mặc định
+	class PhanSo() {
+	    int a = 10;
+	public: 
+	    ~PhanSo() {};
+	}
+	
+	// Destructor tự định nghĩa
+	class PhanSo {
+	    int *a = new int(10);
+	public:
+	    ~PhanSo() {
+	        delete a;
+	        cout << "Destructor called" << endl;
+	    }
+	}
+	
+	// Destructor ảo
+	class PhanSo {
+	public:
+	    virtual ~PhanSo() {
+	        cout << "Destructor called" << endl;
+	    }
+	}
     ```
     
 - **Ví dụ minh họa:**
@@ -1509,16 +1509,16 @@ public:
 ```cpp
 class Human {
 private:
-		int *age;
+    int *age;
 public:
-		// Phương thức thiết lập
-		Human(int age): age(new int(age)) {};
-		
-		// Phương thức hủy
-		~Human() {
-				delete age;
-				cout << "Destructor!!" << endl;
-		}
+        // Phương thức thiết lập
+    Human(int age): age(new int(age)) {};
+    
+        // Phương thức hủy
+    ~Human() {
+        delete age;
+        cout << "Destructor!!" << endl;
+    }
 }
 ```
 
@@ -1535,22 +1535,22 @@ public:
 
 ```cpp
 class Value {
-		int *a;
+    int *a;
 public:
-		Value(int x): a(new int(x)) {};
-		
-		// Copy constructor
-		Value(const Value &value) {
-				a = new int(*(value.a));
-		}
-		
-		// Hàm gán
-		void operator = (const Value &value) {
-				if (this != &value) {
-						delete a;
-						a = new int(*(value.a));
-				}
-		}
+    Value(int x): a(new int(x)) {};
+    
+        // Copy constructor
+    Value(const Value &value) {
+        a = new int(*(value.a));
+    }
+    
+        // Hàm gán
+    void operator = (const Value &value) {
+        if (this != &value) {
+            delete a;
+            a = new int(*(value.a));
+        }
+    }
 }
 ```
 
@@ -1566,14 +1566,14 @@ public:
 ```cpp
 class Human {
 private:
-		// Property
-		string name = "Vinh";
-		int age = 18;
+        // Property
+    string name = "Vinh";
+    int age = 18;
 public:
-		// Method
-		int nextAge() {
-				return age + 1;
-		}
+        // Method
+    int nextAge() {
+        return age + 1;
+    }
 }
 ```
 
@@ -1591,8 +1591,8 @@ private:
 public:
     PhanSo() {};
     PhanSo(int tu, int mau) {
-	       this->tu = tu;
-	       this->mau = mau;
+         this->tu = tu;
+	 this->mau = mau;
     }
 };
 ```
@@ -1609,22 +1609,22 @@ public:
 ```cpp
 class Count {
 private:
-		static int count;
+    static int count;
 public:
-		Count() {
-				count++;
-		}
-		
-		int getCount() {
-				return count;
-		}
+    Count() {
+        count++;
+    }
+    
+    int getCount() {
+        return count;
+    }
 };
 
 int Count::count = 0;
 
 int main() {
-		Count c1, c2, c3;
-		cout << c1.getCount();   // 3
+    Count c1, c2, c3;
+    cout << c1.getCount();   // 3
 }
 ```
 
@@ -1637,23 +1637,23 @@ int main() {
 
 ```cpp
 class Human {
-		string name = "Vinh";
-		int age = 18;
+    string name = "Vinh";
+    int age = 18;
 public:
-		virtual xuat() {};
+    virtual xuat() {};
 };
 
 class SinhVien : public Human {
-		string MSSV = "23521793";
+    string MSSV = "23521793";
 public:
-		xuat() {
-				cout << name << ' ' << MSSV << ' ' << age;
-		}
+    xuat() {
+        cout << name << ' ' << MSSV << ' ' << age;
+    }
 };
 
 int main() {
-		Human *sv = new SinhVien();
-		sv.xuat();   // Vinh 23521793 18
+    Human *sv = new SinhVien();
+    sv.xuat();   // Vinh 23521793 18
 }
 ```
 
