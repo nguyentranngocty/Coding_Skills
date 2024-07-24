@@ -15,7 +15,7 @@
 ## Inheritance
 
 - **ĐỀ BÀI**
-
+- Hình ảnh :
 ![Screen Shot 2024-04-22 at 07.51.18.png](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Screen_Shot_2024-04-22_at_07.51.18.png)
     - **Trước khi kế thừa:**
     ![Untitled 5](https://github.com/nguyentranngocty/Coding_skills/blob/main/C%2B%2B/Image/Untitled%205.png)
