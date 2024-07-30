@@ -140,41 +140,40 @@ class DerivedClass : **public SuperClass1**, **protected SuperClass2** {
     ⇒ Ta muốn thông qua con trỏ thuộc lớp cơ sở có thể truy xuất hàm thành phần được định nghĩa lại ở lớp con.
     *(như VD trên ta mong muốn gọi printfNv của NVSX nhưng lại gọi printfNv của NhanVien)* 
         ⇒ **Phương thức ảo để giải quyết vấn đề này**
-
         - Ta quy định một hàm thành phần là **phương thức ảo** bằng các **thêm từ khóa virtual vào trước khi khai báo hàm**.
         - Thêm một loại đối tượng mới mà không cần sửa đổi thao tác xử lí, quy trình thêm chỉ là xây dựng lớp con kế thừa cơ sở và định nghĩa lại phương thức (ảo) ở lớp mới.
 
-        ```cpp
-        #include <iostream>
-        using namespace std;
+    ```cpp
+    #include <iostream>
+    using namespace std;
 
-        class Nguoi {
-        protected:
-            string name;
-            int age;
+    class Nguoi {
+    protected:
+        string name;
+        int age;
 
-        public:
-            Nguoi() {};
-            Nguoi(string name, int age): name(name), age(age) {};
+    public:
+        Nguoi() {};
+        Nguoi(string name, int age): name(name), age(age) {};
 
-            **virtual** void xuat() {
-                printf("Name: %s, age: %d", name.c_str(), age);
-            }
-        };
+        **virtual** void xuat() {
+            printf("Name: %s, age: %d", name.c_str(), age);
+        }
+    };
 
-        class SinhVien: public Nguoi {
-        private:
-            string MS;
+    class SinhVien: public Nguoi {
+    private:
+        string MS;
 
-        public:
-            SinhVien() {};
-            SinhVien(string name, int age, string MS): Nguoi(name, age), MS(MS) {};
+    public:
+        SinhVien() {};
+        SinhVien(string name, int age, string MS): Nguoi(name, age), MS(MS) {};
 
-            void xuat() **override** {
-                printf("Name: %s, age: %d, MSSV: %s", name.c_str(), age, MS.c_str());
-            }
-        };
-        ```
+        void xuat() **override** {
+            printf("Name: %s, age: %d, MSSV: %s", name.c_str(), age, MS.c_str());
+        }
+    };
+    ```
 
     - **Lưu ý:**
 
