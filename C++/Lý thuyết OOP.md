@@ -1,4 +1,4 @@
-# OOP
+# Lý thuyết OOP
 
 ## Struct
 
